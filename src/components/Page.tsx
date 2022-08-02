@@ -37,7 +37,7 @@ function Page() {
           onSubmit={(e) => {
             e.preventDefault();
             if (!city || !kwNumber) {
-              return console.error("wrong data");
+              return alert("Nieprawidłowe dane formularza");
             }
             setResult(calculateControlSum(city, kwNumber).toString());
           }}
