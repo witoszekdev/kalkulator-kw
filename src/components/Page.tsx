@@ -95,10 +95,16 @@ function Page() {
   );
 }
 
+function getWeight(index: number) {
+  if (index % 3 === 0) return 1;
+  if (index % 3 === 1) return 3;
+  return 7;
+}
+
 function calculateControlSum(city: string, number: string) {
   const combined = `${city}${number}`;
   const total = [...combined]
-    .map((char) => getLetterValue(char))
+    .map((char, index) => getLetterValue(char) * getWeight(index))
     .reduce((sum, value) => sum + value, 0);
   return total % 10;
 }
