@@ -9,7 +9,12 @@ interface CitySelectProps {
 
 export const CitySelect: React.FC<CitySelectProps> = ({ value, onChange }) => {
   return (
-    <Select onChange={onChange} value={value} placeholder="Wybierz sąd">
+    <Select
+      onChange={onChange}
+      value={value}
+      placeholder="Wybierz sąd"
+      required
+    >
       {Object.entries(COURT_MAP).map(([value, displayText]) => (
         <option key={value} value={value}>
           {value} - {displayText}

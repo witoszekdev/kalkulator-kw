@@ -44,7 +44,10 @@ function Page() {
         >
           <FormInput label="Sąd">
             <CitySelect
-              onChange={(e) => setCity(e.target.value)}
+              onChange={(e) => {
+                setResult("");
+                setCity(e.target.value);
+              }}
               value={city}
             />
           </FormInput>
@@ -52,11 +55,16 @@ function Page() {
           <FormInput label="Numer księgi">
             <Input
               type="text"
+              placeholder="00001234"
+              pattern="[0-9]+"
               inputMode="numeric"
               maxLength={8}
               minLength={8}
               required
-              onChange={(e) => setKwNumber(e.target.value)}
+              onChange={(e) => {
+                setResult("");
+                setKwNumber(e.target.value);
+              }}
               value={kwNumber ?? ""}
             />
           </FormInput>
