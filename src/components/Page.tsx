@@ -82,7 +82,10 @@ function Page() {
             <Stat>
               <StatLabel>Wynik</StatLabel>
               <StatNumber>
-                {city}/{kwNumber}/{result}
+                {city} / <wbr /> {kwNumber} / <wbr />{" "}
+                <Box as="span" bg="orange.100" px={1} py={1} rounded="md">
+                  {result}
+                </Box>
               </StatNumber>
             </Stat>
           </Box>
